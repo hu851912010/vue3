@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My Creative Space</title>
+    <link>https://example.com</link>
+    <description>A bilingual personal blog about front-end craft and playful projects.</description>
+    <language>en</language>
+    <item>
+      <title><![CDATA[Building a Vue 3 Static Blog]]></title>
+      <link>https://example.com/articles/building-a-vue3-static-blog</link>
+      <guid>https://example.com/articles/building-a-vue3-static-blog</guid>
+      <description><![CDATA[Foundations, content workflow, and deployment tips for a bilingual static site.]]></description>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2>Design the reading experience first</h2>
+<p>I begin every web project by designing the reading experience. Clear rhythm, consistent spacing, and purposeful typography make even the simplest layout feel premium.</p>
+<ul>
+<li>Define your color palette early so design accents stay consistent.</li>
+<li>Use a modular scale for headings to create hierarchy.</li>
+<li>Reserve breathing room around important call-to-action sections.</li>
+</ul>
+<h2>Content pipeline for Markdown lovers</h2>
+<p>Writing with Markdown keeps me focused on words. A lightweight pipeline is often enough:</p>
+<ol>
+<li>Draft ideas in Obsidian or iA Writer.</li>
+<li>Export to the repository once the story feels complete.</li>
+<li>Automate feed generation so readers always get the latest updates.</li>
+</ol>
+<pre><code class="language-js">
+const modules = import.meta.glob(&#39;./articles/*.md&#39;, { eager: true, as: &#39;raw&#39; });
+
+const articles = Object.values(modules).map(parseMarkdownFile);
+
+</code></pre>
+<h2>Deployment checklist</h2>
+<blockquote>
+<p>A polished indie project is less about scale, more about care.</p>
+</blockquote>
+<ul>
+<li>Generate RSS &amp; sitemap before every release.</li>
+<li>Compress hero imagery and prefer modern formats.</li>
+<li>Add a staging build to test language fallbacks.</li>
+</ul>
+<p>Hope these notes help you build a calm reading space of your own.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Designing Playful Web Tools]]></title>
+      <link>https://example.com/articles/designing-playful-web-tools</link>
+      <guid>https://example.com/articles/designing-playful-web-tools</guid>
+      <description><![CDATA[Balancing usefulness, whimsy, and sound product principles when crafting micro-tools.]]></description>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Building a delightful tool means crafting a narrative arc for the user. The experience should begin with a gentle onboarding, crescendo in productivity, and end with a satisfying completion state.</p>
+<h3>Hooks that welcome curious minds</h3>
+<ul>
+<li>Friendly empty states with guidance.</li>
+<li>Contextual hints instead of heavy tutorials.</li>
+<li>Responsive interactions that reward exploration.</li>
+</ul>
+<h3>Texture and motion matter</h3>
+<p>I sketch motion frames before writing any code. Even subtle hover feedback can make a dense interface approachable.</p>
+<pre><code class="language-css">
+.button-primary {
+
+  background: linear-gradient(140deg, #3b82f6, #60a5fa);
+
+  transition: transform 160ms ease;
+
+}
+
+
+
+.button-primary:hover {
+
+  transform: translateY(-1px);
+
+}
+
+</code></pre>
+<h3>Ship, learn, iterate</h3>
+<blockquote>
+<p>The tool is never finished, but every release should feel complete.</p>
+</blockquote>
+<p>Collect feedback, keep the codebase lean, and let data inform the roadmap.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Lessons from Shipping Web Games]]></title>
+      <link>https://example.com/articles/lessons-from-web-games</link>
+      <guid>https://example.com/articles/lessons-from-web-games</guid>
+      <description><![CDATA[Prototype fast, embrace constraints, and let playtests guide your design decisions.]]></description>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Shipping a web game requires balancing creativity with technical constraints. Browsers are powerful, yet they perform best when we respect their limits.</p>
+<h4>Choose the right constraint</h4>
+<p>I give myself a single limitation per jam: three colors, 90-second rounds, or one-button controls. These constraints spark new mechanics.</p>
+<h4>Prototype the feel first</h4>
+<p>Motion and physics define the soul of a game. I often prototype core loops in a sandbox before building UI.</p>
+<pre><code class="language-html">
+&lt;canvas id=&quot;playground&quot;&gt;&lt;/canvas&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+
+  import { Engine } from &#39;matter-js&#39;;
+
+  const engine = Engine.create();
+
+  Engine.run(engine);
+
+&lt;/script&gt;
+
+</code></pre>
+<h4>Observe players early</h4>
+<blockquote>
+<p>Games are conversations. Observe where players smile and where they stumble.</p>
+</blockquote>
+<p>Set up remote playtests, iterate quickly, and take careful notes. Your future self will thank you.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Notes on Multilingual Interfaces]]></title>
+      <link>https://example.com/articles/notes-on-localization</link>
+      <guid>https://example.com/articles/notes-on-localization</guid>
+      <description><![CDATA[Crafting respectful language toggles, content strategy, and fallback systems for small teams.]]></description>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Designing interfaces for more than one language is a gift. It forces you to slow down, question assumptions, and write with empathy.</p>
+<h5>Principles that keep me grounded</h5>
+<ul>
+<li>Prefer language codes over regions when possible.</li>
+<li>Craft microcopy that respects cultural nuance.</li>
+<li>Keep URLs language-agnostic to simplify SEO.</li>
+</ul>
+<h5>Operational tips</h5>
+<p>Sync the content pipeline with your translators. I use a simple spreadsheet paired with git branches so contributors always see the latest copy.</p>
+<pre><code class="language-bash">
+git checkout -b translate-landing-zh
+
+# Translate content in /src/data/articles
+
+# open a pull request for review
+
+</code></pre>
+<h5>Celebrate diversity</h5>
+<blockquote>
+<p>Localization is not a checkbox. It is an ongoing dialogue with your community.</p>
+</blockquote>
+<p>Plan periodic tone reviews and encourage feedback from native speakers.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
